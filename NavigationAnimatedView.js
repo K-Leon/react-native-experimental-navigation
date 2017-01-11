@@ -41,9 +41,7 @@ type Props = {
 
 type State = {
   layout: NavigationLayout,
-  position: Navigation
-  
-  Value,
+  position: NavigationAnimatedValue,
   scenes: Array<NavigationScene>,
 };
 
