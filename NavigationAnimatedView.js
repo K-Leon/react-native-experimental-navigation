@@ -18,6 +18,7 @@ const NavigationScenesReducer = require('./NavigationScenesReducer');
 const React = require('react');
 const StyleSheet = require('react-native').StyleSheet;
 const View = require('react-native').View;
+const Platform = require('react-native').Platform;
 
 import type {
   NavigationActionCaller,
@@ -40,7 +41,9 @@ type Props = {
 
 type State = {
   layout: NavigationLayout,
-  position: NavigationAnimatedValue,
+  position: Navigation
+  
+  Value,
   scenes: Array<NavigationScene>,
 };
 
@@ -53,6 +56,7 @@ function applyDefaultAnimation(
   Animated.spring(
     position,
     {
+      useNativeDriver: true,
       bounciness: 0,
       toValue: navigationState.index,
     }
@@ -228,8 +232,15 @@ class NavigationAnimatedView
       isMeasured: true,
     };
 
-    layout.height.setValue(height);
-    layout.width.setValue(width);
+        Animated.event([{
+          nativeEvent: {
+            layout: {
+              height: height,
+              width: width,
+            },
+          },
+        }]);
+
 
     this.setState({ layout });
   }
