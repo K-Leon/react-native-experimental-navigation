@@ -63,7 +63,7 @@ type Props = NavigationSceneRendererProps & {
   style: any,
 };
 
-const {PropTypes} = React;
+import PropTypes from 'prop-types';
 
 class SceneView extends React.Component<any, SceneViewProps, any> {
 

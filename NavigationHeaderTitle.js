@@ -28,6 +28,7 @@
 'use strict';
 
 const React = require('react');
+import PropTypes from 'prop-types';
 const ReactNative = require('react-native');
 
 const {
@@ -66,11 +67,5 @@ const styles = StyleSheet.create({
     textAlign: Platform.OS === 'ios' ? 'center' : 'left'
   }
 });
-
-NavigationHeaderTitle.propTypes = {
-  children: React.PropTypes.string.isRequired,
-  style: View.propTypes.style,
-  textStyle: Text.propTypes.style
-};
 
 module.exports = NavigationHeaderTitle;

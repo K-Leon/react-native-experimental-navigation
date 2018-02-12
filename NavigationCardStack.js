@@ -43,7 +43,7 @@ const StyleSheet = require('react-native').StyleSheet;
 
 const emptyFunction = require('fbjs/lib/emptyFunction');
 
-const {PropTypes} = React;
+import PropTypes from 'prop-types';
 const {Directions} = NavigationCardStackPanResponder;
 
 import type {

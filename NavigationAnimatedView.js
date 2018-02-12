@@ -45,7 +45,7 @@ type State = {
   scenes: Array<NavigationScene>,
 };
 
-const {PropTypes} = React;
+import PropTypes from 'prop-types';
 
 function applyDefaultAnimation(
   position: NavigationAnimatedValue,

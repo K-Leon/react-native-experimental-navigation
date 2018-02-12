@@ -71,7 +71,7 @@ type SubViewName = 'left' | 'title' | 'right';
 
 const APPBAR_HEIGHT = Platform.OS === 'ios' ? 44 : 56;
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : 0;
-const {PropTypes} = React;
+import PropTypes from 'prop-types';
 
 class NavigationHeader extends React.PureComponent<DefaultProps, Props, any> {
   props: Props;
@@ -97,9 +97,7 @@ class NavigationHeader extends React.PureComponent<DefaultProps, Props, any> {
     ...NavigationPropTypes.SceneRendererProps,
     renderLeftComponent: PropTypes.func,
     renderRightComponent: PropTypes.func,
-    renderTitleComponent: PropTypes.func,
-    style: View.propTypes.style,
-    viewProps: PropTypes.shape(View.propTypes),
+    renderTitleComponent: PropTypes.func
   };
 
   render(): ReactElement {

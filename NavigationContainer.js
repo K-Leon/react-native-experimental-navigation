@@ -14,6 +14,8 @@
 var React = require('react');
 var NavigationRootContainer = require('./NavigationRootContainer');
 
+import PropTypes from 'prop-types';
+
 function createNavigationContainer(
   Component: ReactClass<any>,
 ): ReactClass & Object {
@@ -36,10 +38,10 @@ function createNavigationContainer(
     }
   }
   NavigationComponent.contextTypes = {
-    onNavigate: React.PropTypes.func,
+    onNavigate: PropTypes.func,
   };
   NavigationComponent.childContextTypes = {
-    onNavigate: React.PropTypes.func,
+    onNavigate: PropTypes.func,
   };
   return NavigationComponent;
 }
